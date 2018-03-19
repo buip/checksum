@@ -13,12 +13,14 @@ public class Question1 {
         int divisor = scanner.nextInt();
 
         int numBits = 0;
-        while (temp / 2 > 1) {
+        while (temp / 2 > 0) {
             temp = temp / 2;
             numBits++;
         }
 
-        int addedDataWord = dataword * 2 ^ numBits;
+        int addedDataWord = dataword * (int) Math.pow(2, numBits);
+
+        System.out.println(addedDataWord);
 
         int remainder = addedDataWord % divisor;
 
