@@ -1,5 +1,6 @@
 package Question1;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Driver {
@@ -8,14 +9,27 @@ public class Driver {
 
         Scanner scanner = new Scanner(System.in);
 
-        int dataWord = scanner.nextInt();
+        System.out.println("Please enter the dataword: ");
 
-        int divisor = scanner.nextInt();
+        String dataWord = scanner.next();
+
+        System.out.println("Please enter the divisor: ");
+
+        String divisor = scanner.next();
 
         Encoder encoder = new Encoder(dataWord, divisor);
 
-        int codeWord = encoder.encode(dataWord, divisor);
+        int[] codeWord = encoder.encode();
 
+        System.out.println("Your code word is: \n" + Arrays.toString(codeWord));
+
+        System.out.println("Please enter the codeword you want to check: ");
+
+        String codeWordToCheck = scanner.next();
+
+        Decoder decoder = new Decoder(codeWordToCheck, divisor);
+
+        System.out.println(decoder.decode());
 
 
     }
