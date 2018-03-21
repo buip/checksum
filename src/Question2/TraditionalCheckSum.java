@@ -13,8 +13,9 @@ public class TraditionalCheckSum {
         int i = 0;
         while (i < words.length) {
             message[i] = words[i];
+            i++;
         }
-        message[i + 1] = checkSum;
+        message[i] = checkSum;
         return message;
     }
 
@@ -34,7 +35,7 @@ public class TraditionalCheckSum {
             sum = leftSum + rightSum;
         }
         int complementSum = 15 - sum;
-        System.out.println(complementSum);
+        System.out.printf("    complementSum: %d\n", complementSum);
         return complementSum;
     }
 
@@ -43,14 +44,19 @@ public class TraditionalCheckSum {
         int checkSum = generateTraditionalCheckSum(words);
         int receivedSum = getSum(message);
         if (checkSum == receivedSum) {
-            System.out.println("Message accepted.");
+            System.out.println("    Message accepted.");
         } else {
-            System.out.println("Message declined.");
+            System.out.println("    Message declined.");
         }
     }
 
     private int[] getWords(int[] message) {
         int[] words = new int[message.length - 1];
+        int i = 0;
+        while (i < words.length) {
+            words[i] = message[i];
+            i++;
+        }
         return words;
     }
 
