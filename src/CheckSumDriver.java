@@ -1,8 +1,9 @@
-package Question2;
+// This class is for Question 2 and 3
 
-public class Driver {
+public class CheckSumDriver {
 
     public static void main (String[] args) {
+        System.out.println("Test the traditional checksum and Fletcher checksum.");
         // Creates words to send
         int[] words = {5, 13, 15, 3, 6};
 
@@ -10,7 +11,6 @@ public class Driver {
         System.out.println("Traditional check sum");
         TraditionalCheckSum traditionalCheckSum = new TraditionalCheckSum();
         int[] message = traditionalCheckSum.sendMessage(words);
-
         int[] noisedMessage = generateNoisedMessage(message);
         System.out.println("Testing a noised message with ");
         printArray(noisedMessage);
@@ -19,6 +19,19 @@ public class Driver {
         System.out.println("Testing a correct message with");
         printArray(message);
         traditionalCheckSum.receiveMessage(message);
+
+        // Fletcher check sum for question 3
+        System.out.println("Testing Fletcher check sum");
+        FletcherCheckSum fletcherCheckSum = new FletcherCheckSum();
+        int[] message2 = fletcherCheckSum.sendMessage(words);
+        int[] noisedMessage2 = generateNoisedMessage(message2);
+        System.out.println("Testing a noised message with ");
+        printArray(noisedMessage2);
+        fletcherCheckSum.receiveMessage(noisedMessage);
+
+        System.out.println("Testing a correct message with");
+        printArray(message2);
+        fletcherCheckSum.receiveMessage(message2);
     }
 
     public static int[] generateNoisedMessage(int[] message) {
