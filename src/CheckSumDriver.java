@@ -5,7 +5,7 @@ public class CheckSumDriver {
     public static void main (String[] args) {
         System.out.println("Test the traditional checksum and Fletcher checksum.");
         // Creates words to send
-        int[] words = {5, 13, 15, 3, 6};
+        int[] words = {7, 11, 12, 0, 6};
 
         // Tests the traditional checksum.
         System.out.println("Traditional check sum");
