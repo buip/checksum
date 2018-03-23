@@ -1,4 +1,4 @@
-package Question3;
+package Question3Second;
 
 public class FletcherCheckSum {
     public static void main (String[] args) {

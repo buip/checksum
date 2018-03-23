@@ -1,3 +1,5 @@
+package Question2Second;
+
 public class CheckSum {
 
     public static void main (String[] args) {
