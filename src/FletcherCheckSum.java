@@ -35,9 +35,9 @@ public class FletcherCheckSum {
         int checkSum = generateFletcherCheckSum(words);
         int receivedSum = getSum(message);
         if (checkSum == receivedSum) {
-            System.out.println("Message accepted.");
+            System.out.println("Message is accepted.");
         } else {
-            System.out.println("Message declined.");
+            System.out.println("Message is declined.");
         }
     }
 
