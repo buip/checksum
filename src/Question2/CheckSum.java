@@ -1,14 +1,16 @@
-package Question2Second;
+package Question2;
 
 public class CheckSum {
 
     public static void main (String[] args) {
 
-        short[] words = {7, 11, 12, 0, 6};
+        short[] words = {32000, 400, 30022, 5400, 0};
 
-        System.out.println(checksum(words));
+        int binaryWords = 0xFFFF & checksum(words);
 
-//        System.out.println("Binary from is: " + Integer.toBinaryString(words))
+        System.out.println("Binary from is: " + Integer.toBinaryString(binaryWords));
+
+        System.out.println("Decimal form is " + binaryWords);
     }
 
 
@@ -29,9 +31,7 @@ public class CheckSum {
         rightSum = (short) (sum & 0x0000FFFF);
         sum = leftSum + rightSum;
 
-        short finalSum = (short) ~sum;
-
-        return finalSum;
+        return (short) ~sum;
     }
 
 }

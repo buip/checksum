@@ -9,10 +9,12 @@ public class Driver {
 
         Scanner scanner = new Scanner(System.in);
 
+        //1001
         System.out.println("Please enter the dataword: ");
 
         String dataWord = scanner.next();
 
+        //1011
         System.out.println("Please enter the divisor: ");
 
         String divisor = scanner.next();
